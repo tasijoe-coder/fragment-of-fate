@@ -1,0 +1,130 @@
+{
+  "cards": [
+    {
+      "id": "quick_slash",
+      "name": "迅斬",
+      "cost": 1,
+      "tags": ["attack", "combo"],
+      "text": "+1 連擊，造成 4 傷害\n每層連擊 +1 傷害",
+      "summary_rows": [
+        { "label": "連擊", "value": "+1" },
+        { "label": "傷害", "value": "4" },
+        { "label": "加成", "value": "每層 +1" }
+      ],
+      "detail_text": "先獲得 1 點連擊，再對敵人造成 4 點傷害。此牌會依目前連擊額外增加傷害，每層連擊 +1。",
+      "effects": [
+        {
+          "id": "quick_slash_attack",
+          "type": "attack",
+          "target": "enemy",
+          "base_damage": 4,
+          "combo_scale": 1,
+          "combo_gain_before": 1,
+          "hits": 1,
+          "momentum": "slash"
+        }
+      ]
+    },
+    {
+      "id": "tempo_shift",
+      "name": "節奏轉換",
+      "cost": 1,
+      "tags": ["setup", "combo"],
+      "text": "+2 連擊，抽 1 張",
+      "summary_rows": [
+        { "label": "連擊", "value": "+2" },
+        { "label": "抽牌", "value": "1" }
+      ],
+      "detail_text": "立刻獲得 2 點連擊，並抽 1 張牌。適合先手鋪好節奏，接著銜接攻擊牌。",
+      "effects": [
+        {
+          "id": "tempo_shift_combo",
+          "type": "gain_combo",
+          "target": "player",
+          "amount": 2
+        },
+        {
+          "id": "tempo_shift_draw",
+          "type": "draw",
+          "target": "player",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "twin_fang",
+      "name": "雙牙連襲",
+      "cost": 1,
+      "tags": ["attack", "combo", "chain"],
+      "text": "+1 連擊，2 段各 2 傷害\n每層連擊 +1 傷害",
+      "summary_rows": [
+        { "label": "連擊", "value": "+1" },
+        { "label": "傷害", "value": "2 段各 2" },
+        { "label": "加成", "value": "每層 +1" }
+      ],
+      "detail_text": "先獲得 1 點連擊，再連擊 2 次，每段造成 2 點傷害。此牌每層連擊都會讓每段傷害 +1。",
+      "effects": [
+        {
+          "id": "twin_fang_attack",
+          "type": "attack",
+          "target": "enemy",
+          "base_damage": 2,
+          "combo_scale": 1,
+          "combo_gain_before": 1,
+          "hits": 2,
+          "momentum": "chain"
+        }
+      ]
+    },
+    {
+      "id": "link_drive",
+      "name": "連段驅動",
+      "cost": 1,
+      "tags": ["attack", "combo"],
+      "text": "+1 連擊，造成 3 傷害\n每層連擊 +2 傷害",
+      "summary_rows": [
+        { "label": "連擊", "value": "+1" },
+        { "label": "傷害", "value": "3" },
+        { "label": "加成", "value": "每層 +2" }
+      ],
+      "detail_text": "先獲得 1 點連擊，再造成 3 點傷害。此牌每層連擊額外 +2 傷害，適合接在連擊中段。",
+      "effects": [
+        {
+          "id": "link_drive_attack",
+          "type": "attack",
+          "target": "enemy",
+          "base_damage": 3,
+          "combo_scale": 2,
+          "combo_gain_before": 1,
+          "hits": 1,
+          "momentum": "drive"
+        }
+      ]
+    },
+    {
+      "id": "finale",
+      "name": "終幕一擊",
+      "cost": 2,
+      "tags": ["attack", "combo", "finisher"],
+      "text": "+1 連擊，造成 7 傷害\n每層連擊 +3 傷害",
+      "summary_rows": [
+        { "label": "連擊", "value": "+1" },
+        { "label": "傷害", "value": "7" },
+        { "label": "加成", "value": "每層 +3" }
+      ],
+      "detail_text": "先獲得 1 點連擊，再造成 7 點傷害。此牌每層連擊額外 +3 傷害，適合當作收尾重擊。",
+      "effects": [
+        {
+          "id": "finale_attack",
+          "type": "attack",
+          "target": "enemy",
+          "base_damage": 7,
+          "combo_scale": 3,
+          "combo_gain_before": 1,
+          "hits": 1,
+          "momentum": "finisher"
+        }
+      ]
+    }
+  ]
+}

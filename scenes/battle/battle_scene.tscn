@@ -1,0 +1,359 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/battle/battle_controller.gd" id="1_battle"]
+
+[node name="BattleScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_battle")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0745098, 0.0862745, 0.121569, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="RootVBox" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="HeaderPanel" type="PanelContainer" parent="MarginContainer/RootVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(0, 236)
+
+[node name="HeaderHBox" type="HBoxContainer" parent="MarginContainer/RootVBox/HeaderPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="LeftInfo" type="VBoxContainer" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox"]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="PlayerNameLabel" type="Label" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox/LeftInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+text = "命運編織者"
+
+[node name="PlayerHpBar" type="ProgressBar" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox/LeftInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 100.0
+value = 100.0
+show_percentage = false
+
+[node name="PlayerHpLabel" type="Label" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox/LeftInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+text = "生命：34 / 34"
+
+[node name="PlayerEnergyLabel" type="Label" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox/LeftInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+text = "能量：3 / 3"
+
+[node name="PlayerComboLabel" type="Label" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox/LeftInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+text = "連擊：0"
+
+[node name="PlayerBlockLabel" type="Label" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox/LeftInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+text = "防禦：0"
+
+[node name="CenterInfo" type="CenterContainer" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CenterInfoVBox" type="VBoxContainer" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox/CenterInfo"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="EncounterLabel" type="Label" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox/CenterInfo/CenterInfoVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+autowrap_mode = 3
+text = "戰鬥：訓練史萊姆"
+
+[node name="StatusLabel" type="Label" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox/CenterInfo/CenterInfoVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+autowrap_mode = 3
+text = "先疊連擊，準備好再結束。"
+
+[node name="EnemyIntentLabel" type="Label" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox/CenterInfo/CenterInfoVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+autowrap_mode = 3
+text = "敵方意圖：撞擊 | 4 傷害"
+
+[node name="ControlsRow" type="HBoxContainer" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox/CenterInfo/CenterInfoVBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="EndTurnButton" type="Button" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox/CenterInfo/CenterInfoVBox/ControlsRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 46)
+text = "結束回合"
+
+[node name="RightInfo" type="VBoxContainer" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox"]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="EnemyNameLabel" type="Label" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox/RightInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 2
+autowrap_mode = 3
+text = "訓練史萊姆"
+
+[node name="EnemyHpBar" type="ProgressBar" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox/RightInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 100.0
+value = 100.0
+show_percentage = false
+
+[node name="EnemyHpLabel" type="Label" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox/RightInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 2
+autowrap_mode = 3
+text = "生命：28 / 28"
+
+[node name="EnemyBlockLabel" type="Label" parent="MarginContainer/RootVBox/HeaderPanel/HeaderHBox/RightInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 2
+autowrap_mode = 3
+text = "防禦：0"
+[node name="BodyHBox" type="HBoxContainer" parent="MarginContainer/RootVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="BoardPanel" type="PanelContainer" parent="MarginContainer/RootVBox/BodyHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BoardRoot" type="Control" parent="MarginContainer/RootVBox/BodyHBox/BoardPanel"]
+custom_minimum_size = Vector2(0, 360)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BattlefieldLayout" type="MarginContainer" parent="MarginContainer/RootVBox/BodyHBox/BoardPanel/BoardRoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+mouse_filter = 2
+
+[node name="BattlefieldVBox" type="VBoxContainer" parent="MarginContainer/RootVBox/BodyHBox/BoardPanel/BoardRoot/BattlefieldLayout"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+mouse_filter = 2
+
+[node name="EnemyRow" type="HBoxContainer" parent="MarginContainer/RootVBox/BodyHBox/BoardPanel/BoardRoot/BattlefieldLayout/BattlefieldVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+mouse_filter = 2
+
+[node name="EnemyAnchor" type="PanelContainer" parent="MarginContainer/RootVBox/BodyHBox/BoardPanel/BoardRoot/BattlefieldLayout/BattlefieldVBox/EnemyRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(260, 132)
+mouse_filter = 2
+
+[node name="EnemyAnchorLabel" type="Label" parent="MarginContainer/RootVBox/BodyHBox/BoardPanel/BoardRoot/BattlefieldLayout/BattlefieldVBox/EnemyRow/EnemyAnchor"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+text = "敵人"
+
+[node name="BattlefieldSpacer" type="Control" parent="MarginContainer/RootVBox/BodyHBox/BoardPanel/BoardRoot/BattlefieldLayout/BattlefieldVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="PlayerRow" type="HBoxContainer" parent="MarginContainer/RootVBox/BodyHBox/BoardPanel/BoardRoot/BattlefieldLayout/BattlefieldVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 0
+mouse_filter = 2
+
+[node name="PlayerAnchor" type="PanelContainer" parent="MarginContainer/RootVBox/BodyHBox/BoardPanel/BoardRoot/BattlefieldLayout/BattlefieldVBox/PlayerRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(260, 132)
+mouse_filter = 2
+
+[node name="PlayerAnchorLabel" type="Label" parent="MarginContainer/RootVBox/BodyHBox/BoardPanel/BoardRoot/BattlefieldLayout/BattlefieldVBox/PlayerRow/PlayerAnchor"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+text = "玩家"
+
+[node name="AttackFxLayer" type="Control" parent="MarginContainer/RootVBox/BodyHBox/BoardPanel/BoardRoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DamageFxLayer" type="Control" parent="MarginContainer/RootVBox/BodyHBox/BoardPanel/BoardRoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TotalFxLayer" type="Control" parent="MarginContainer/RootVBox/BodyHBox/BoardPanel/BoardRoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DebugPanel" type="PanelContainer" parent="MarginContainer/RootVBox/BodyHBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(320, 0)
+size_flags_vertical = 3
+
+[node name="DebugScroll" type="ScrollContainer" parent="MarginContainer/RootVBox/BodyHBox/DebugPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+follow_focus = true
+
+[node name="DebugVBox" type="VBoxContainer" parent="MarginContainer/RootVBox/BodyHBox/DebugPanel/DebugScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="CardDetailTitleLabel" type="Label" parent="MarginContainer/RootVBox/BodyHBox/DebugPanel/DebugScroll/DebugVBox"]
+layout_mode = 2
+text = "卡牌詳情"
+
+[node name="CardDetailNameLabel" type="Label" parent="MarginContainer/RootVBox/BodyHBox/DebugPanel/DebugScroll/DebugVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+text = "滑鼠懸停手牌"
+
+[node name="CardDetailBodyLabel" type="Label" parent="MarginContainer/RootVBox/BodyHBox/DebugPanel/DebugScroll/DebugVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+text = "查看完整效果說明。"
+[node name="RuleTitleLabel" type="Label" parent="MarginContainer/RootVBox/BodyHBox/DebugPanel/DebugScroll/DebugVBox"]
+layout_mode = 2
+text = "當前規則"
+
+[node name="RuleSummaryLabel" type="Label" parent="MarginContainer/RootVBox/BodyHBox/DebugPanel/DebugScroll/DebugVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+text = "規則摘要"
+
+[node name="StateTitleLabel" type="Label" parent="MarginContainer/RootVBox/BodyHBox/DebugPanel/DebugScroll/DebugVBox"]
+layout_mode = 2
+text = "戰鬥狀態"
+
+[node name="StateDebugLabel" type="Label" parent="MarginContainer/RootVBox/BodyHBox/DebugPanel/DebugScroll/DebugVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+text = "狀態摘要"
+
+[node name="LogTitleLabel" type="Label" parent="MarginContainer/RootVBox/BodyHBox/DebugPanel/DebugScroll/DebugVBox"]
+layout_mode = 2
+text = "事件紀錄"
+
+[node name="EventLogLabel" type="Label" parent="MarginContainer/RootVBox/BodyHBox/DebugPanel/DebugScroll/DebugVBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+text = ""
+
+[node name="HandPanel" type="PanelContainer" parent="MarginContainer/RootVBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 264)
+
+[node name="HandVBox" type="VBoxContainer" parent="MarginContainer/RootVBox/HandPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="HandHeaderLabel" type="Label" parent="MarginContainer/RootVBox/HandPanel/HandVBox"]
+layout_mode = 2
+text = "手牌"
+
+[node name="HandScroll" type="ScrollContainer" parent="MarginContainer/RootVBox/HandPanel/HandVBox"]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+follow_focus = true
+
+[node name="HandArea" type="Control" parent="MarginContainer/RootVBox/HandPanel/HandVBox/HandScroll"]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
