@@ -1,0 +1,20 @@
+{
+  "id": "training_slime",
+  "name": "訓練史萊姆",
+  "max_hp": 28,
+  "starting_block": 0,
+  "intent_cycle": [
+    {
+      "id": "slime_bump",
+      "type": "attack",
+      "label": "撞擊",
+      "damage": 4
+    },
+    {
+      "id": "slime_tense",
+      "type": "block",
+      "label": "凝膠護盾",
+      "block": 5
+    }
+  ]
+}

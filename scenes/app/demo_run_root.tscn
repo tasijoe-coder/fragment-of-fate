@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/app/demo_run_root.gd" id="1_run"]
+
+[node name="DemoRunRoot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_run")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.054902, 0.0666667, 0.0980392, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HeaderPanel" type="PanelContainer" parent="MarginContainer/VBox"]
+visible = false
+layout_mode = 2
+
+[node name="HeaderVBox" type="VBoxContainer" parent="MarginContainer/VBox/HeaderPanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="StatusLabel" type="Label" parent="MarginContainer/VBox/HeaderPanel/HeaderVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "正在準備挑戰..."
+
+[node name="RouteLabel" type="Label" parent="MarginContainer/VBox/HeaderPanel/HeaderVBox"]
+layout_mode = 2
+text = "固定構築：連擊 / 攻擊鏈"
+
+[node name="SceneHost" type="Control" parent="MarginContainer/VBox"]
+custom_minimum_size = Vector2(0, 780)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="OverlayHost" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

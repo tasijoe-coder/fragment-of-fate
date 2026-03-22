@@ -1,0 +1,29 @@
+{
+  "id": "demo_vertical_slice",
+  "title": "動勢 v2 Final+ 展示切片",
+  "player": {
+    "name": "命運編織者",
+    "max_hp": 34,
+    "max_energy": 3,
+    "draw_per_turn": 5
+  },
+  "starting_deck": [
+    "quick_slash",
+    "tempo_shift",
+    "twin_fang",
+    "quick_slash",
+    "link_drive",
+    "tempo_shift",
+    "finale",
+    "twin_fang"
+  ],
+  "active_rule_chains": [
+    "combo_attack_chain"
+  ],
+  "encounters": [
+    "training_slime",
+    "arena_brute"
+  ],
+  "reset_between_encounters": true
+}
+

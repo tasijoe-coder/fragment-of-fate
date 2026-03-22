@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/app/title_menu.gd" id="1_title"]
+
+[node name="TitleMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_title")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0666667, 0.0823529, 0.117647, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_top = 72
+theme_override_constants/margin_right = 96
+theme_override_constants/margin_bottom = 72
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "命運殘片"
+
+[node name="SubtitleLabel" type="Label" parent="MarginContainer/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "展示切片 - 連擊 / 攻擊鏈"
+
+[node name="DescriptionLabel" type="Label" parent="MarginContainer/VBox"]
+layout_mode = 2
+autowrap_mode = 3
+text = "卡牌只負責提出事件請求，真正決定結果的是規則鏈。這個 demo 會跑固定的雙戰連擊流程。"
+
+[node name="StartRunButton" type="Button" parent="MarginContainer/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(240, 56)
+text = "開始挑戰"

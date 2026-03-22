@@ -1,0 +1,24 @@
+{
+  "rule_chains": [
+    {
+      "id": "combo_attack_chain",
+      "summary": "先疊連擊，再放大攻擊傷害。",
+      "trigger": "effect_requested",
+      "applies_to": {
+        "effect_type": "attack",
+        "tags_any": ["attack"]
+      },
+      "modifiers": [
+        {
+          "type": "gain_combo_before_attack",
+          "field": "combo_gain_before"
+        },
+        {
+          "type": "scale_attack_damage_from_combo",
+          "field": "combo_scale",
+          "combo_offset": 1
+        }
+      ]
+    }
+  ]
+}

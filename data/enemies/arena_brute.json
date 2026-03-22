@@ -1,0 +1,27 @@
+{
+  "id": "arena_brute",
+  "name": "競技場暴徒",
+  "max_hp": 44,
+  "starting_block": 4,
+  "intent_cycle": [
+    {
+      "id": "brute_brace",
+      "type": "block",
+      "label": "架勢防禦",
+      "block": 7
+    },
+    {
+      "id": "brute_crush",
+      "type": "attack",
+      "label": "碎骨重擊",
+      "damage": 8
+    },
+    {
+      "id": "brute_brace_slam",
+      "type": "block_attack",
+      "label": "架盾重砸",
+      "block": 5,
+      "damage": 6
+    }
+  ]
+}
